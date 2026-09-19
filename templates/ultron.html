@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ultron</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/ultron.css') }}" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">Personal AI Assistant</div>
+        <h1>Ultron</h1>
+      </div>
+      <button id="voiceBtn" class="voice-button">🎤 Voice</button>
+    </header>
+
+    <main class="layout">
+      <section class="panel chat-panel">
+        <div id="chat" class="chat-box">
+          <div class="bubble bot">Hello. I'm Ultron. Ask me about trading, jobs, projects, debugging, or cybersecurity learning.</div>
+        </div>
+
+        <div class="quick-row">
+          <button class="quick" data-command="trade">Trading</button>
+          <button class="quick" data-command="jobs">Jobs</button>
+          <button class="quick" data-command="project">Project</button>
+          <button class="quick" data-command="debug">Debug</button>
+        </div>
+
+        <div class="composer">
+          <input id="messageInput" type="text" placeholder="Type your command..." />
+          <button id="sendBtn">Send</button>
+        </div>
+      </section>
+
+      <aside class="panel side-panel">
+        <h2>Quick Tools</h2>
+
+        <div class="tool-block">
+          <h3>Trade Journal</h3>
+          <input id="tradeSymbol" type="text" placeholder="Symbol" />
+          <input id="tradeSide" type="text" placeholder="LONG / SHORT" />
+          <input id="tradeEntry" type="text" placeholder="Entry" />
+          <input id="tradeStop" type="text" placeholder="Stop" />
+          <input id="tradeTarget" type="text" placeholder="Target" />
+          <input id="tradeNote" type="text" placeholder="Notes" />
+          <button id="saveTradeBtn">Save Trade</button>
+          <div id="tradeList" class="mini-list"></div>
+        </div>
+
+        <div class="tool-block">
+          <h3>Project Board</h3>
+          <input id="projectTitle" type="text" placeholder="Task title" />
+          <input id="projectDue" type="text" placeholder="Due date" />
+          <button id="saveProjectBtn">Save Task</button>
+          <div id="projectList" class="mini-list"></div>
+        </div>
+
+        <div class="tool-block">
+          <h3>Applications</h3>
+          <input id="appCompany" type="text" placeholder="Company" />
+          <input id="appRole" type="text" placeholder="Role" />
+          <button id="saveAppBtn">Save Application</button>
+          <div id="appList" class="mini-list"></div>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/ultron.js') }}"></script>
+</body>
+</html>
